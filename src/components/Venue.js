@@ -6,28 +6,29 @@ import VenueArea from './VenueArea'
 import '../styles/VenueDisplay.css'
 
 const Venue = (props) => {
-    const venueID = props.match.params.id
     const [ venue, setVenue ] = useState({areas: [], event: { startTime: 0, intervalTime: 0, endTime: 0 }})
     useEffect(() => {
-        db.ref(`${venueID}`).on('value', snapshot => {
+        db.ref().on('value', snapshot => {
             setVenue(snapshot.val())
         })
-    }, [venueID])
+    }, [])
     return (
         <div className="venue-display__container">
             <div className="venue-display__header-area">
                 <h1><span>Welcome to</span>{venue.name}</h1>
             </div>
             {venue.areas.map((area, i) => {
-                return (
-                    <VenueArea key={i} area={area} />
-                )
+                if(area.active) {
+                    return <VenueArea key={i} area={area} />
+                } else {
+                    return null
+                }
             })}
             <div className="venue-display__details">
-                <h3>Details</h3>
-                <p style={{flex: 1}}>{venue.event.title}</p>
-                <p>Starts At: <strong>{DateTime.fromMillis(venue.event.startTime).toFormat('HH:mm')}</strong></p>
-                {<p>Interval Length: <strong>{venue.event.intervalLength}</strong></p> && venue.intervalLength > 0}
+                <h3>{venue.event.title}</h3>
+                <p style={{flex: 1}}>{venue.event.description}</p>
+                <p>Starts At: <strong>{DateTime.fromMillis(venue.event.startTime).toLocaleString(DateTime.TIME_SIMPLE)}</strong></p>
+                {venue.event.intervalLength > 0 && <p>Interval Length: <strong>{venue.event.intervalLength} minutes</strong></p>}
                 <p>Ends At: <strong>{DateTime.fromMillis(venue.event.endTime).toFormat('HH:mm')}</strong></p>
             </div>
         </div>
