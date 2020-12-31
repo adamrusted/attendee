@@ -24,8 +24,8 @@ const Venue = (props) => {
                 )
             })}
             <div className="venue-display__details">
-                <h3>Details</h3>
-                <p style={{flex: 1}}>{venue.event.title}</p>
+                <h3>{venue.event.title}</h3>
+                <p style={{flex: 1}}>{venue.event.description}</p>
                 <p>Starts At: <strong>{DateTime.fromMillis(venue.event.startTime).toFormat('HH:mm')}</strong></p>
                 {<p>Interval Length: <strong>{venue.event.intervalLength}</strong></p> && venue.intervalLength > 0}
                 <p>Ends At: <strong>{DateTime.fromMillis(venue.event.endTime).toFormat('HH:mm')}</strong></p>
