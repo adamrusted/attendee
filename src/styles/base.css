@@ -7,7 +7,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap');
 
-html, body, #root {
+html, body, #root, .main-container {
     height: 100%;
 }
 

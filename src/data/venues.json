@@ -1,5 +1,4 @@
-[
-    {
+{
         "name": "Bridge House Theatre",
         "event": {
             "title": "A Dance Show",
@@ -24,6 +23,10 @@
             "capacity": 10,
             "seated": 0,
             "availability": "Good"
+        },{
+            "name": "Test Area",
+            "capacity": 10,
+            "seated": 0,
+            "availability": "Good"
         }]
     }
-]
