@@ -1,0 +1,63 @@
+.checkin__container {
+    height: 100%;
+    max-height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    background-color: #518B85;
+    color: #F3F3F3;
+}
+.checkin-app__item {
+    transition: ease-in-out 0.2s;
+    border: solid 1px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    cursor: pointer;
+    padding: 2rem;
+}
+.checkin-app__item h2 {
+    font-size: 2rem;
+}
+.checkin-app__item h1 {
+    font-size: 3rem;
+}
+.checkin-app__item.active {
+    background-color: #F3F3F3;
+    color: #030303;
+    flex-grow: 1;
+    cursor: default;
+}
+
+.checkin-app__item .checkin-app__buttons { 
+    display: none;
+}
+
+.active .checkin-app__buttons {
+    display: flex;
+    flex: 1; 
+    width: 100%;
+    align-items: stretch;
+}
+.active .checkin-app__buttons button {
+    flex: 1;
+    background: #518B85;
+    color: #F3F3F3;
+    transition: 0.2s ease-in-out;
+    border: none;
+    border-radius: 1rem;
+    margin-right: 2rem;
+}
+.active .checkin-app__buttons button:last-of-type {
+    margin-right: 0;
+}
+.active .checkin-app__buttons button:disabled {
+    background-color: rgba(81,139,133,0.5);
+    color: rgba(243,243,243,0.5);
+}
+.active .checkin-app__buttons button svg {
+    max-width: 40vw;
+    max-height: 50vh;
+}

@@ -1,0 +1,64 @@
+.venue-display__container {
+    background-color: #518B85;
+    color: #F3F3F3;
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    height: 100vh;
+    padding: 2rem;
+    width: 100%;
+}
+
+.venue-display__header-area {
+    align-items: center;
+    display: flex;
+    grid-column: 1 / span 3;
+}
+.venue-display__header-area h1 {
+    font-weight: 700;
+    font-size: 12rem;
+}
+.venue-display__header-area span {
+    font-weight: 500;
+    font-size: 6.4rem;
+    display: block;
+}
+
+.venue-display__card, .venue-display__details {
+    background: #F3F3F3;
+    color: #030303;
+    padding: 1rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    transition: ease-in-out 0.4s;
+}
+
+.venue-display__card h2 {
+    color: #518B85;
+    font-size: 7.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    flex: 1;
+}
+
+.venue-display__card h3 {
+    font-size: 5.6rem;
+    font-weight: 500;
+}
+.venue-display__card.area-full {
+    background-color: rgba(243,243,243, 0.5);
+}
+
+.venue-display__details {
+    grid-column: 3 / span 1;
+    grid-row: 2 / span 2;
+    font-weight: 500;
+    font-size: 3.2rem;
+}
+
+.venue-display__details h3 {
+    font-weight: 500;
+    font-size: 5.6rem;
+}
