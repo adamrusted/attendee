@@ -9,6 +9,18 @@
     padding: 2rem;
     width: 100%;
 }
+.tinyHomeLink {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding-top: 2rem;
+    padding-right: 2rem;
+}
+.tinyHomeLink svg {
+    width: 25px;
+    height: 25px;
+    color:rgba(243,243,243, 0.5);
+}
 
 .venue-display__header-area {
     align-items: center;

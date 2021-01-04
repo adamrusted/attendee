@@ -4,24 +4,26 @@ import { Link } from 'react-router-dom'
 import db from '../firebase/firebase'
 
 
-const DashboardVenue = () => {
+const DashboardVenue = ({venueID}) => {
     const [ data, setData ] = useState({areas: []})
     useEffect(() => {
-        db.ref('/').on('value', (snapshot) => {
+        db.ref(`/${venueID}/`).on('value', (snapshot) => {
             setData(snapshot.val())
         })
-    }, [])
+    }, [venueID])
     return (
         <div>
             <h1>{data.name}</h1>
             <ul>
-            {data.areas.map((area) => {
-                return ( <li>{area.name} ({area.seated}/{area.capacity})</li>)
-            })}
+            {data.areas.map((area, index) => {
+                return ( <React.Fragment>
+                    <li>{area.name} ({area.seated}/{area.capacity})</li>
+                    </React.Fragment>)
+                })}
+                <Link to={`/${venueID}/view`}>Display</Link>
+                <Link to={`/${venueID}/checkin`}>Checkin</Link>
+                <Link to={`/${venueID}/edit`}>Edit</Link>
             </ul>
-            <Link to={`/view`}>Display</Link>
-            <Link to={`/checkin`}>Checkin</Link>
-            <Link to={`/edit`}>Edit</Link>
         </div>
     )
 }

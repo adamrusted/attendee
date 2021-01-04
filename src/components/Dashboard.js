@@ -10,6 +10,7 @@ const Dashboard = () => {
             setVenues(snapshot.val())
         })
     }, [])
+    console.log(venues)
     return (
         <div>{venues.map((venue, i) => {
             return ( <DashboardVenue key={i} venueID={i} {...venue} />)
