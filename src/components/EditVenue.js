@@ -3,16 +3,17 @@ import React, {useEffect, useReducer } from 'react'
 import db from '../firebase/firebase'
 import AreaReducer from '../reducers/AreaReducer'
 
-const EditVenue = () => {
+const EditVenue = (props) => {
+    const venueID = props.match.params.id
     const [state, dispatch] = useReducer(AreaReducer, { event: {}, areas: []})
     useEffect(() => {
-        db.ref().on('value', snapshot => {
+        db.ref(`/${venueID}/`).on('value', snapshot => {
             dispatch({type: 'DATA_LOAD', value: snapshot.val()})
         })
-    }, [])
+    }, [venueID])
     const handleSubmit = (e) => {
         e.preventDefault();
-        db.ref('/').set(state)
+        db.ref(`/${venueID}/`).set(state)
     }
     return (
         <form style={{display: 'flex', flexDirection: 'column'}} onSubmit={(e) => { handleSubmit(e) }}>

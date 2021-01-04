@@ -1,4 +1,37 @@
-{
+[
+    {
+        "name": "Bridge House Theatre",
+        "event": {
+            "title": "A Dance Show",
+            "startTime": 0,
+            "intervalTime": 0,
+            "intervalLength": 20,
+            "endTime": 0,
+            "description": ""
+        },
+        "areas": [{
+            "name": "Stalls",
+            "capacity": 250,
+            "seated": 0,
+            "availability": "Good"
+        },{
+            "name": "Balcony",
+            "capacity": 100,
+            "seated": 0,
+            "availability": "Good"
+        },{
+            "name": "Test Area",
+            "capacity": 10,
+            "seated": 0,
+            "availability": "Good"
+        },{
+            "name": "Test Area",
+            "capacity": 10,
+            "seated": 0,
+            "availability": "Good"
+        }]
+    },
+    {
         "name": "Bridge House Theatre",
         "event": {
             "title": "A Dance Show",
@@ -30,3 +63,4 @@
             "availability": "Good"
         }]
     }
+]

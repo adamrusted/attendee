@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import DashboardVenue from '../components/DashboardVenue'
+import Dashboard from '../components/Dashboard'
 import EditVenue from '../components/EditVenue'
 import Venue from '../components/Venue'
 import Checkin from '../components/Checkin'
@@ -12,10 +12,11 @@ export default function AppRouter() {
         <Router>
             <div className="main-container">
                 <Switch>
-                    <Route path="/" exact={true} component={DashboardVenue} />
-                    <Route path="/edit" exact={true} component={EditVenue} />
-                    <Route path="/view" exact={true} component={Venue} />
-                    <Route path="/checkin" exact={true} component={Checkin} />
+                    <Route path="/" exact={true} component={Dashboard} />
+                    <Route path="/:id/edit" exact={true} component={EditVenue} />
+                    <Route path="/:id" exact={true} component={Venue} />
+                    <Route path="/:id/view" exact={true} component={Venue} />
+                    <Route path="/:id/checkin" exact={true} component={Checkin} />
                 </Switch>
             </div>
         </Router>
